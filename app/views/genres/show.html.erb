@@ -1,0 +1,9 @@
+<h2>Genre <%= @genre.title %></h2>
+<p><%= @genre.description %></p>
+
+<h4>List of books for this genre:</h4>
+<ul>
+  <% @genre_books.each do |book| %>
+    <li><%= link_to book.title, book_path(book) %></li>
+  <% end %>
+</ul>
