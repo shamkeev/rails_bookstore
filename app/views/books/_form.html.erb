@@ -12,28 +12,34 @@
     <% end %>
 
     <div class="form-group">
-      <%= f.label 'Название книги' %>
+      <%= f.label 'Book title' %>
       <%= f.text_field :title, class:"form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label 'Описание книги' %>
+      <%= f.label 'Book Description' %>
       <%= f.text_area :description, class:"form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label 'Цена' %>
+      <%= f.label 'Price' %>
       <%= f.number_field :price, class:"form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :author %><br />
-      <%= f.collection_select :author_id, Author.all, :id, :name %>
+      <%= f.label 'Book\'s author' %><br />
+      <%= f.collection_select :author_id, Author.all, :id, :name,{}, class:"form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :picture %>
-      <%= f.file_field :picture, class:"form-control" %>
+      <%= f.label 'Book\'s genre' %><br />
+      <%= f.collection_select :genre_id, Genre.all, :id, :title,{}, class:"form-control" %>
+    </div>
+
+
+    <div class="form-group">
+      <%= f.label 'Book\'s cover' %>
+      <%= f.file_field :picture, class:"form-group" %>
     </div>
 
     <div>

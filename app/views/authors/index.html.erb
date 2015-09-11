@@ -1,18 +1,23 @@
-<h1>All authors</h1>
-<%= link_to 'New Author', new_author_path, class:"btn btn-default" %>
+<h4>All authors</h4>
+<%= link_to 'New Author', new_author_path, class:"btn btn-primary" %>
 <table class="table table-hover">
 	<thead>
 		<tr>
+			<th>No.</th>
+            <th>Pic.</th>
 			<th>Name</th>
 			<th>Bio</th>
             <th>Actions</th>
 		</tr>
 	</thead>
 	<tbody>
+        <% count = 0 %>
         <% @authors.each do |author| %>
 		<tr>
+            <td> <%= count = count + 1 %></td>
+            <td><%= image_tag "/uploads/#{author.id}", height:'80' %></td>
 			<td><%= author.name %></td>
-			<td><%= author.bio %></td>
+			<td class="desc-700"><%= author.bio %></td>
             <td>
               <%= link_to 'View', author_path(author) %>
               <%= link_to 'Edit', edit_author_path(author) %>

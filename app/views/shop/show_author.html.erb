@@ -1,0 +1,27 @@
+<h4><%= @author.name %></h4>
+<div class="row row-bio">
+  <div class="col-md-4">
+    <%= image_tag "/uploads/#{@author.id}", height: '300' %>
+  </div>
+
+  <div class="col-md-8">
+    <div class="well well-bio">
+      <p><%= @author.bio %></p>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-top:25px">
+  <strong>Books by <%= @author.name %></strong>
+  <hr>
+    <% unless @author_books.any? %>
+      Seems like there are no books by this author in our store.
+    <% end %>
+    <% @author_books.each do |book| %>
+      <div class="col-md-3 book">
+        <%= link_to image_tag("/uploads/#{book.id}", height: '300'), show_book_path(book) %> <br>
+        <strong><%= book.price %> soms</strong>
+      </div>
+    <% end %>
+
+</div>

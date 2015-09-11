@@ -1,6 +1,6 @@
-<h1>Все книги</h1>
+<h4>Все книги</h4>
 
-<%= link_to 'Добавить новую книгу', new_book_path, class:"btn btn-primary" %>
+<%= link_to 'Add New Book', new_book_path, class:"btn btn-primary" %>
 
 <table class="table table-hover">
 	<thead>
@@ -22,7 +22,7 @@
           <td><%= count = count + 1 %></td>
           <td><%= image_tag "/uploads/#{book.id}", height:'80' %></td>
           <td><%= book.title %></td>
-          <td><%= book.description %></td>
+          <td class="desc"><%= book.description %></td>
           <td><%= book.author.name %></td>
           <td><%= book.genre.title %></td>
           <td><%= book.price %></td>

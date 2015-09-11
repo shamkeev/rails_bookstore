@@ -16,26 +16,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Книжный магазин</a>
+          <%= link_to 'BookStore', root_path, class: 'navbar-brand' %>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#about">Книги</a></li>
-            <li><a href="#contact">Жанры</a></li>
-            <li><a href="#contact">Авторы</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
+            <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to 'Home', root_path %></li>
+            <li class="<%= 'active' if current_page?(list_books_path) %>"><%= link_to 'Books', list_books_path %></li>
+            <li class="<%= 'active' if current_page?(list_authors_path) %>"><%= link_to 'Authors', list_authors_path %></li>
+            <li class="<%= 'active' if current_page?(list_genres_path) %>"><%= link_to 'Genres', list_genres_path %></li>
           </ul>
 
         </div><!--/.nav-collapse -->
@@ -45,12 +33,5 @@
       <%= yield %>
     </div>
 
-    <script>
-      //Make a link on navbar active after click
-        $(".nav a").on("click", function(){
-            $(".nav").find(".active").removeClass("active");
-            $(this).parent().addClass("active");
-        });
-    </script>
 </body>
 </html>

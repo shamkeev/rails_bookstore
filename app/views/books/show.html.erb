@@ -1,10 +1,8 @@
-
+<h4>Book Info</h4>
 <div class="col-md-4">
-  <%= link_to 'Edit', edit_book_path(@book.id), class:"btn btn-info" %> <br>
-  <hr>
   <%= image_tag "/uploads/#{@book.id}", height: '400' %>
 </div>
-<div class="col-md-8">
+<div class="col-md-6">
   <div class="page-header">
     <h4><%= @book.title %><small> by <%= link_to @book.author.name, author_path(@book.author.id) %></small></h4>
     <strong><%= @book.genre.title %></strong><br>
@@ -13,4 +11,8 @@
   <div class="well">
     <p><%= @book.description %></p>
   </div>
+</div>
+<div class="col-md-2">
+  <%= link_to 'Edit', edit_book_path(@book.id), class:"btn btn-info" %> <br>
+  <hr>
 </div>

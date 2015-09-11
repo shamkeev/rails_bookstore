@@ -1,0 +1,10 @@
+<div class="row">
+  <strong>Latest Books</strong>
+  <hr>
+  <% @latest_books.each do |book| %>
+    <div class="col-md-3 book">
+      <%= link_to image_tag("/uploads/#{book.id}", height: '300'), show_book_path(book) %> <br>
+      <strong><%= book.price %> soms</strong>
+    </div>
+  <% end %>
+</div>

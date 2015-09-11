@@ -1,0 +1,22 @@
+<div class="col-md-12">
+  <h2><%= @genre.title %></h2>
+  <div class="well">
+    <p><%= @genre.description %></p>
+  </div>
+</div>
+
+<div class="row" style="margin-top:25px">
+  <strong>Books in <%= @genre.title %> genre</strong>
+  <hr>
+  <% unless @genre_books.any? %>
+      Seems like there are no books in this genre in our store.
+  <% end %>
+  <% @genre_books.each do |book| %>
+      <div class="col-md-3 book">
+        <%= link_to image_tag("/uploads/#{book.id}", height: '300'), show_book_path(book) %> <br>
+        <strong><%= book.price %> soms</strong>
+      </div>
+  <% end %>
+
+</div>
+

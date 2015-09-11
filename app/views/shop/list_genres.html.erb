@@ -1,0 +1,21 @@
+<h4>All genres</h4>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% count = 0 %>
+  <% @genres.each do |genre| %>
+      <tr>
+        <td><%= count = count + 1 %></td>
+        <td><%= link_to genre.title, show_genre_path(genre) %></td>
+        <td class="desc-700"><%= genre.description %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

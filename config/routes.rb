@@ -2,8 +2,18 @@ Rails.application.routes.draw do
 
   scope :admin do
     resources :books, :authors, :genres
-    root 'books#index'
+    get '/', to: 'books#index', as: 'admin'
   end
+
+  root 'shop#index'
+
+  get 'books', to: 'shop#list_books', as: 'list_books'
+  get 'authors', to: 'shop#list_authors', as: 'list_authors'
+  get 'genres', to: 'shop#list_genres', as: 'list_genres'
+
+  get 'books/:id', to: 'shop#show_book', as: 'show_book'
+  get 'authors/:id', to: 'shop#show_author', as: 'show_author'
+  get 'genres/:id', to: 'shop#show_genre', as: 'show_genre'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
