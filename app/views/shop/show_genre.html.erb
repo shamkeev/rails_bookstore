@@ -13,7 +13,7 @@
   <% end %>
   <% @genre_books.each do |book| %>
       <div class="col-md-3 book">
-        <%= link_to image_tag("/uploads/#{book.id}", height: '300'), show_book_path(book) %> <br>
+        <%= link_to image_tag("/uploads/books/#{book.id}", height: '300'), show_book_path(book) %> <br>
         <strong><%= book.price %> soms</strong>
       </div>
   <% end %>

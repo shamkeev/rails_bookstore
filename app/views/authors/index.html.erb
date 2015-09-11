@@ -15,7 +15,7 @@
         <% @authors.each do |author| %>
 		<tr>
             <td> <%= count = count + 1 %></td>
-            <td><%= image_tag "/uploads/#{author.id}", height:'80' %></td>
+            <td><%= image_tag "/uploads/authors/#{author.id}", height:'80' %></td>
 			<td><%= author.name %></td>
 			<td class="desc-700"><%= author.bio %></td>
             <td>

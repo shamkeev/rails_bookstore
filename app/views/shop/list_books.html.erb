@@ -17,7 +17,7 @@
   <% @books.each do |book| %>
       <tr>
         <td><%= count = count + 1 %></td>
-        <td><%= link_to image_tag("/uploads/#{book.id}", height:'80'), show_book_path(book) %></td>
+        <td><%= link_to image_tag("/uploads/books/#{book.id}", height:'80'), show_book_path(book) %></td>
         <td><%= link_to book.title, show_book_path(book) %></td>
         <td class="desc"><%= book.description %></td>
         <td><%= book.author.name %></td>

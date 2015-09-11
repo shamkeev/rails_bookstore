@@ -55,7 +55,7 @@ class AuthorsController < AdminController
     uploaded_file = params[:author][:picture]
 
     if !uploaded_file.nil?
-      new_file_path = Rails.root.join('public', 'uploads', @author.id.to_s)
+      new_file_path = Rails.root.join('public', 'uploads', 'authors', @author.id.to_s)
 
       File.open(new_file_path, 'wb') do |file|
         file.write uploaded_file.read

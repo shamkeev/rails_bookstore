@@ -14,7 +14,7 @@
   <% @authors.each do |author| %>
       <tr>
         <td> <%= count = count + 1 %></td>
-        <td><%= link_to image_tag("/uploads/#{author.id}", height:'80'), show_author_path(author) %></td>
+        <td><%= link_to image_tag("/uploads/authors/#{author.id}", height:'80'), show_author_path(author) %></td>
         <td><%= link_to author.name, show_author_path(author) %></td>
         <td class="desc-700"><%= author.bio %></td>
       </tr>
