@@ -7,7 +7,9 @@
 </div>
 
 <div class="col-md-3">
-  <%= link_to 'Edit', edit_genre_path(@genre.id), class:"btn btn-info" %> <br>
+  <%= link_to 'Edit', edit_genre_path(@genre.id), class:"btn btn-info" %>
+  <%= link_to 'Delete', genre_path(@genre), class:"btn btn-info", method: :delete,
+              data:{confirm: "Are you sure?"} %>
   <hr>
   <strong>List of books for this genre:</strong>
   <ul>

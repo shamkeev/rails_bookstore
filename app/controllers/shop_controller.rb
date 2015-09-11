@@ -1,7 +1,9 @@
 class ShopController < ApplicationController
 
   def index
-    @latest_books = Book.order(:created_at).limit(8)
+    @genres = Genre.all
+    @latest_books = Book.order(created_at: :desc).limit(8)
+    @top_rated_books = Book.order(rating: :desc).limit(8)
   end
 
   def list_books

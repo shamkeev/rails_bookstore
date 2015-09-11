@@ -5,8 +5,8 @@
   <%= image_tag "/uploads/books/#{@book.id}", height: '400' %>
 </div>
 <div class="col-md-8">
-    <strong><%= link_to @book.genre.title, show_genre_path(@book.genre) %></strong><br>
-    <strong>Price: <%= @book.price %></strong>
+    <strong>Genre: <%= link_to @book.genre.title, show_genre_path(@book.genre) %></strong><br>
+    <strong>Price: <%= number_with_precision @book.price, :precision => 2%> soms</strong>
   <div class="well well-book">
     <p><%= @book.description %></p>
   </div>

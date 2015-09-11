@@ -20,7 +20,8 @@
     <% @author_books.each do |book| %>
       <div class="col-md-3 book">
         <%= link_to image_tag("/uploads/books/#{book.id}", height: '300'), show_book_path(book) %> <br>
-        <strong><%= book.price %> soms</strong>
+        <%= link_to book.title, show_book_path(book) %> <br>
+        <strong><%= number_with_precision book.price, :precision => 2%> soms</strong>
       </div>
     <% end %>
 

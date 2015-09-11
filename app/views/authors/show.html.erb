@@ -13,7 +13,9 @@
 </div>
 
 <div class="col-md-3">
-  <%= link_to 'Edit', edit_author_path(@author.id), class:"btn btn-info" %> <br>
+  <%= link_to 'Edit', edit_author_path(@author), class:"btn btn-info" %> <br>
+  <%= link_to 'Delete', author_path(@author), method: :delete,
+              data: {confirm: "Are you sure?"}%> <br>
   <hr>
   <strong>List of Books:</strong>
   <ul>
